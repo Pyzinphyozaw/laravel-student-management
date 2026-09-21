@@ -5,6 +5,7 @@ Full-stack student management app built for the **Intern Coding Test: Laravel AP
 - **Backend:** Laravel 11 REST API + MySQL
 - **Frontend:** React 18 + TypeScript (Vite)
 - **Database:** MySQL 8 (Docker for local dev)
+- **Tests:** PEST tests on PHP Units
 - **CI/CD:** GitHub Actions → Docker Hub → Render (auto-deploy on push)
 
 ---
