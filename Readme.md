@@ -9,7 +9,9 @@ Full-stack student management app built for the **Intern Coding Test: Laravel AP
 - **CI/CD:** GitHub Actions → Docker Hub → Render (auto-deploy on push)
 - **Deployment:** Students and Classes >>GENERATED RANDOM<<
 - **Application link** https://student-management-frontend-lert.onrender.com/students
-
+- **Full API documentation:** [docs/API.md](docs/API.md)
+- **Project Report** [Project Report](docs/ProjectReport.md)
+- **Screenshots**
 ---
 
 ## Table of Contents
