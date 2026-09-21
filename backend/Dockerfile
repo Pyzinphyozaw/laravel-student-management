@@ -10,11 +10,13 @@ RUN composer install \
     --optimize-autoloader
 
 # ---- Stage 2: runtime ----
-FROM php:8.4-fpm-alpine
+FROM php:8.3-fpm-alpine
 
 RUN apk add --no-cache \
         bash \
         curl \
+        nginx \
+        supervisor \
         libpng-dev \
         libzip-dev \
         oniguruma-dev \
@@ -39,7 +41,7 @@ WORKDIR /var/www/html
 COPY --from=vendor /app/vendor ./vendor
 COPY . .
 
-# Bake production .env from build args (populated from GitHub Secrets)
+# Bake .env from build args
 ARG APP_NAME="Student Management"
 ARG APP_ENV=production
 ARG APP_DEBUG=false
@@ -76,5 +78,11 @@ RUN mkdir -p storage/framework/{cache,sessions,views} storage/logs bootstrap/cac
     && chown -R www-data:www-data storage bootstrap/cache .env \
     && chmod -R 775 storage bootstrap/cache
 
-EXPOSE 9000
-CMD ["php-fpm"]
+# nginx + supervisor config
+COPY docker/nginx.conf /etc/nginx/nginx.conf
+COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+EXPOSE 10000
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
