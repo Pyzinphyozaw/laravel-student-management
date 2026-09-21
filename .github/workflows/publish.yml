@@ -28,6 +28,7 @@ jobs:
           push: true
           build-args: |
             APP_KEY=${{ secrets.APP_KEY }}
+            APP_DEBUG=${{ secrets.APP_DEBUG }}
             APP_URL=${{ secrets.APP_URL }}
             DB_HOST=${{ secrets.DB_HOST }}
             DB_DATABASE=${{ secrets.DB_DATABASE }}
