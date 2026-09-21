@@ -1,4 +1,20 @@
+# dependencies
+node_modules/
+vendor/
+
+# env
 .env
 .env.*
 !.env.example
-*.log
+backend/.env
+frontend/.env
+
+# build
+dist/
+build/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/settings.json
