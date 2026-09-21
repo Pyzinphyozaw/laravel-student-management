@@ -7,6 +7,7 @@ Full-stack student management app built for the **Intern Coding Test: Laravel AP
 - **Database:** MySQL 8 (Docker for local dev)
 - **Tests:** PEST tests on PHP Units
 - **CI/CD:** GitHub Actions → Docker Hub → Render (auto-deploy on push)
+- **Deployment:** Students and Classes >>GENERATED RANDOM<<
 
 ---
 
