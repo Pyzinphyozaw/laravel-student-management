@@ -11,7 +11,7 @@ Full-stack student management app built for the **Intern Coding Test: Laravel AP
 - **Application link** https://student-management-frontend-lert.onrender.com/students
 - **Full API documentation:** [docs/API.md](docs/API.md)
 - **Project Report** [Project Report](docs/ProjectReport.md)
-- **Screenshots**
+- **Screenshots** [Project Report](docs/screenshots)
 ---
 
 ## Table of Contents
